@@ -6,6 +6,11 @@ pipeline {
         sh 'echo $USER'
       }
     }
+    stage('QA') {
+      steps {
+        cleanWs(cleanWhenFailure: true)
+      }
+    }
   }
   environment {
     TEST = 'DEV'
